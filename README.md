@@ -18,7 +18,6 @@ The Arduino watches a button on pin `2`. When the button is pressed, it sends th
 
 The Python script listens for that serial message. The first punch starts the interaction, asks whether you want to scream into a hole, records your answer, and puts your spoken scream into the web page. A second punch sends it.
 
-Very serious engineering. Extremely normal emotional infrastructure.
 
 ## Try Just the Website
 
