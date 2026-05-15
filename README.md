@@ -154,3 +154,14 @@ Check your microphone permissions, default input device, and whether `pyaudio` i
 # Privacy Note
 
 The web page runs in your browser. The Python speech recognition uses Google's online recognition through the `SpeechRecognition` package, so that part needs an internet connection.
+
+# Common Questions And Concerns!
+
+#### Can I use this if I am not a coder?
+    Of Course!!!!
+#### What are these Buttons You Speaf Of???
+    They are one-key macropads! THey are really easy to use, and you can bulk buy on of Amazon!
+#### Regular Punching bags are just fine.....
+    Well, this is cooler. Just Kidding. This machine is more of a comfort buddy as well, as you cand shout into it and then send the words away.
+#### How Much do you think it costs to make?
+    Around 40-60 dollars including the punching bag, and you can always DIY a punching bag out of pillows if you cant afford the punching bag
