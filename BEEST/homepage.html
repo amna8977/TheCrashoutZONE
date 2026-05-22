@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Crashout Zone - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Chakra+Petch:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --ink: #221914;
+            --deep: #17110f;
+            --ember: #ffa200;
+            --ember-dark: #cc7a00;
+            --paper: #fff8ee;
+            --soft: rgba(255, 248, 238, 0.9);
+            --line: rgba(255, 162, 0, 0.24);
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 86px 24px 48px;
+            font-family: 'Arvo', 'Chakra Petch', sans-serif;
+            color: var(--paper);
+            background:
+                radial-gradient(circle at 18% 18%, rgba(255, 162, 0, 0.28), transparent 28%),
+                radial-gradient(circle at 82% 24%, rgba(219, 19, 19, 0.22), transparent 30%),
+                linear-gradient(135deg, #120d0b 0%, #2b1b13 48%, #17110f 100%);
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 46px 46px;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent 82%);
+        }
+
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            min-height: 58px;
+            padding: 10px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            background: rgba(22, 18, 16, 0.92);
+            border-bottom: 1px solid var(--line);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+            backdrop-filter: blur(12px);
+        }
+
+        .hack-club-logo {
+            position: absolute;
+            top: 76px;
+            left: -18px;
+            z-index: 1;
+            width: 190px;
+            height: auto;
+            border-radius: 4px;
+            filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.38));
+            pointer-events: none;
+            transform: rotate(-4deg);
+            transform-origin: left center;
+        }
+
+        .nav-title {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--ember);
+            color: #1f1608;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+            width: min(1120px, 100%);
+            margin: 0 auto;
+        }
+
+        .hero {
+            min-height: calc(100vh - 118px);
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+            align-items: center;
+            gap: 34px;
+        }
+
+        .section {
+            margin-top: 24px;
+            padding: 28px;
+            color: var(--ink);
+            background: var(--soft);
+            border: 1px solid rgba(255, 255, 255, 0.72);
+            border-radius: 8px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+            backdrop-filter: blur(12px);
+        }
+
+        .eyebrow {
+            width: fit-content;
+            margin: 0 0 16px;
+            padding: 7px 11px;
+            color: var(--ember);
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 162, 0, 0.08);
+        }
+
+        h1 {
+            max-width: 760px;
+            margin: 0;
+            color: #ffffff;
+            font-size: clamp(42px, 7vw, 82px);
+            line-height: 0.98;
+        }
+
+        .hero-copy {
+            max-width: 650px;
+            margin: 22px 0 0;
+            color: rgba(255, 248, 238, 0.82);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .actions {
+            margin-top: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 12px 18px;
+            color: #1f1608;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 5px;
+            background: var(--ember);
+            box-shadow: 0 14px 28px rgba(255, 162, 0, 0.22);
+        }
+
+        .button:hover {
+            background: var(--ember-dark);
+            color: #ffffff;
+        }
+
+        .button.secondary {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: none;
+        }
+
+        .button.secondary:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .panel {
+            padding: 26px;
+            color: var(--ink);
+            background: var(--soft);
+            border: 1px solid rgba(255, 255, 255, 0.72);
+            border-radius: 8px;
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
+            backdrop-filter: blur(12px);
+        }
+
+        .panel h2 {
+            margin: 0 0 12px;
+            font-size: 24px;
+            line-height: 1.2;
+        }
+
+        .panel p,
+        .section p {
+            margin: 0;
+            color: #4a3931;
+            line-height: 1.6;
+        }
+
+        .section h2 {
+            margin: 0 0 12px;
+            font-size: 30px;
+            line-height: 1.2;
+        }
+
+        .section p + p {
+            margin-top: 12px;
+        }
+
+        .feature-list {
+            display: grid;
+            gap: 12px;
+            margin: 22px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 14px;
+            border-left: 4px solid var(--ember);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.56);
+            color: #3d2d26;
+            font-weight: 700;
+        }
+
+        .footer-note {
+            margin-top: 18px;
+            color: rgba(255, 248, 238, 0.68);
+            font-size: 14px;
+        }
+
+        @media (max-width: 760px) {
+            body {
+                padding: 128px 18px 36px;
+            }
+
+            .top-nav {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .nav-links {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                min-height: auto;
+                grid-template-columns: 1fr;
+                align-content: center;
+            }
+
+            h1 {
+                font-size: 44px;
+            }
+
+            .hack-club-logo {
+                top: 134px;
+                left: -10px;
+                width: 128px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-title">The Crashout Zone</div>
+        <div class="nav-links">
+            <a href="homepage.html" class="active">Home</a>
+            <a href="Screamintoahole.html">Crashout</a>
+            <a href="acknowledgements.html">A Very Special Thanks</a>
+        </div>
+    </nav>
+    <img class="hack-club-logo" src="flag-orpheus-top.png" alt="Hack Club Orpheus logo">
+
+    <main>
+        <section class="hero">
+            <div>
+                <h1>Crash-OUT</h1>
+                <p class="hero-copy">
+                    The Crashout Zone is a tiny place to be angry without pretending
+                    everything is fine. Type it, punch it, send it away, and get back to
+                    being a functional human. This project was made for Hack Club BEEST.
+                </p>
+                <div class="actions">
+                    <a class="button" href="Screamintoahole.html">Enter the Zone</a>
+                </div>
+                <p class="footer-note">Made w/ love by amuemu.</p>
+            </div>
+
+            <aside class="panel">
+                <h2>What happens here?</h2>
+                <p>
+                   Combust the burning-hot fury which is you. The zone is a safe place to let it all out, then get back to being a functional human. You can:
+                </p>
+                <ul class="feature-list">
+                    <li>Type your crashout</li>
+                    <li>Use voice crashout</li>
+                    <li>Send it into the zone</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="section" id="what-is-zone">
+            <h2>What is the Zone?</h2>
+            <p>
+                The Crashout Zone is a tiny stress-release machine that is part website,
+                part punching bag, and fully committed to letting the chaos leave your body.
+                It was built for Hack Club BEEST as a small, dramatic reset button for rough moments.
+            </p>
+            <p>
+                When you are ready, head to the crashout page to type, speak, crashout,
+                or punch your way into the zone.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
