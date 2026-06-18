@@ -6,8 +6,9 @@ The Crashout Zone connects a physical punching bag button to a browser page. You
 
 ## What Is In Here
 
-- `Screamintoahole.html` is the web page.
-- `intro.html` is also a web page
+- `index.html` is the GitHub Pages home page.
+- `Screamintoahole.html` is the main crashout page.
+- `Intro.html` is the older intro page kept for compatibility.
 - `Punchingbag.ino` is the Arduino sketch that detects a punch/button press.
 - `punching_bag_integration.py` connects the hardware, microphone, text-to-speech, and browser together.
 - `This is fine.jpg` is the background image for the page.
@@ -26,7 +27,7 @@ You do not need the hardware to use the page.
 Open:
 
 ```text
-Screamintoahole.html
+index.html
 ```
 
 The website lets you:
@@ -36,6 +37,18 @@ The website lets you:
 - keep a local count of how many crashouts have been sent
 
 Chrome or Edge will usually work best for the voice button.
+
+## GitHub Pages
+
+This folder is now ready to publish as a GitHub Pages site because it includes an `index.html` home page at the project root.
+
+After uploading the files to a GitHub repository:
+
+1. Open the repository on GitHub.
+2. Go to **Settings → Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Select the branch that contains these files, usually `main`, and choose the root folder `/`.
+5. Save, then wait for GitHub to publish the site.
 
 # Hardware
 
@@ -133,29 +146,29 @@ Then the flow is:
 3. Say your crashout.
 4. Punch again to send it.
 
-# Troubleshooting
+## Troubleshooting
 
-## The serial port will not open
+### The serial port will not open
 
 Check that the Arduino IDE Serial Monitor is closed, the board is plugged in, and `SERIAL_PORT` matches the board's port.
 
-## ChromeDriver will not start
+### ChromeDriver will not start
 
 Make sure Chrome is installed and Selenium is up to date. If you are using a manual ChromeDriver, make sure it matches your Chrome version.
 
-## Browser voice input does not work
+### Browser voice input does not work
 
 Try Chrome or Edge. Some browsers do not support the Web Speech API.
 
-## Python cannot hear you
+### Python cannot hear you
 
 Check your microphone permissions, default input device, and whether `pyaudio` installed correctly.
 
-# Privacy Note
+## Privacy Note
 
-The web page runs in your browser. The Python speech recognition uses Google's online recognition through the `SpeechRecognition` package, so that part needs an internet connection.
+The web page runs locally in your browser. The Python speech recognition uses Google's online recognition through the `SpeechRecognition` package, so that part needs an internet connection.
 
-# Common Questions And Concerns!
+## Common Questions And Concerns!
 
 #### Can I use this if I am not a coder?
     Of Course!!!!
