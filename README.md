@@ -3,6 +3,7 @@
 Sometimes you do not need a productivity app. Sometimes you need to punch something, yell your feelings at a computer, and let the void do its thing.
 
 The Crashout Zone connects a physical punching bag button to a browser page. You can type a crashout, use voice input, or let the Python bridge listen for punches from an Arduino/Pico and control the page for you.
+https://amna8977.github.io/TheCrashoutZONE/
 
 ## What Is In Here
 
